@@ -1,0 +1,137 @@
+.section {
+  padding: 96px 72px 112px 72px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.32);
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #0d0d0d;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Vertical line drawn behind the node column */
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(180, 185, 210, 0.65) 4%,
+    rgba(180, 185, 210, 0.65) 96%,
+    transparent 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Step row ── */
+.step {
+  display: grid;
+  grid-template-columns: 1fr 48px 1fr;
+  align-items: center;
+  min-height: 140px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left: content | node | spacer */
+.stepLeft .content  { grid-column: 1; text-align: right; padding-right: 44px; }
+.stepLeft .nodeWrap { grid-column: 2; justify-self: center; }
+.stepLeft .spacer   { grid-column: 3; }
+
+/* Right: spacer | node | content */
+.stepRight .spacer   { grid-column: 1; }
+.stepRight .nodeWrap { grid-column: 2; justify-self: center; }
+.stepRight .content  { grid-column: 3; text-align: left; padding-left: 44px; }
+
+/* ── Node ── */
+.nodeWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+}
+
+.node {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  border: 1.5px solid rgba(160, 165, 200, 0.55);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+/* ── Content ── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stepNumber {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.28);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.stepTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0d0d0d;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.stepDesc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.42);
+  line-height: 1.65;
+  max-width: 230px;
+}
+
+.stepLeft .stepDesc  { margin-left: auto; }
+.stepRight .stepDesc { margin-right: auto; }

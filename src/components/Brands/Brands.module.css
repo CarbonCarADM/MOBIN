@@ -1,0 +1,89 @@
+.section {
+  padding: 64px 0 72px 0;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0d0d0d;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.40);
+  margin-bottom: 40px;
+  letter-spacing: 0.01em;
+}
+
+/* Track with fade on both sides */
+.track {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, #f5f5f5 0%, transparent 100%);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, #f5f5f5 0%, transparent 100%);
+}
+
+/* Logos row */
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 0 120px;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 32px;
+  filter: grayscale(100%) opacity(0.35);
+  transition: filter 0.25s ease;
+}
+
+.logo:hover {
+  filter: grayscale(100%) opacity(0.65);
+}
+
+/* OUXI SVG is white — invert to make it dark on light background */
+.logo:first-child {
+  filter: grayscale(100%) invert(1) opacity(0.45);
+}
+
+.logo:first-child:hover {
+  filter: grayscale(100%) invert(1) opacity(0.70);
+}
+
+.logo svg,
+.logo img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+}

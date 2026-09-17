@@ -1,0 +1,122 @@
+.footer {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 80px 72px 48px 72px;
+  text-align: center;
+}
+
+.mapTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0d0d0d;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+.mapSubtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.48);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* ── Map Section ── */
+.mapSection {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%) brightness(1.05) contrast(0.9);
+}
+
+.mapOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.7) 10%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.7) 90%, rgba(255, 255, 255, 0.98) 100%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 12%, transparent 30%, transparent 70%, rgba(255, 255, 255, 0.6) 88%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+/* ── Bottom Section ── */
+.bottom {
+  padding: 32px 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.copyright {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.36);
+  margin: 0;
+}
+
+/* ── Social ── */
+.social {
+  display: flex;
+  gap: 20px;
+}
+
+.social a {
+  color: rgba(0, 0, 0, 0.36);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social a:hover {
+  color: #0d0d0d;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .header {
+    padding: 48px 32px 32px 32px;
+  }
+
+  .mapTitle {
+    font-size: 28px;
+  }
+
+  .mapSubtitle {
+    font-size: 14px;
+  }
+
+  .bottom {
+    padding: 24px 32px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
