@@ -1,6 +1,6 @@
 {
   "settings": {
-    "siteName": "Mobin",
+    "siteName": "E-BIKE",
     "siteDescription": "E-bikes premium, curadoria especializada e suporte completo para cada pedal.",
     "whatsapp": "5527999999999",
     "instagram": "#instagram",
@@ -12,8 +12,8 @@
     "heroStatLabel": "Bikes Vendidas",
     "footerTitle": "Conforto e performance te esperam",
     "footerSubtitle": "Visite nossa loja e teste uma e-bike de luxo instantaneamente",
-    "mapsEmbed": "https://maps.google.com/maps?q=Avenida%20Augusto%20Emilio%20Estellita%20Lins%2C%2070%2C%20Jardim%20Camburi%2C%20Vit%C3%B3ria%20-%20ES%2C%2029090-590&t=&z=16&ie=UTF8&iwloc=&output=embed",
-    "copyright": "© 2025 Mobin. Todos os direitos reservados."
+    "mapsEmbed": "https://maps.google.com/maps?q=Praia+do+Canto,+Vit%C3%B3ria,+ES&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    "copyright": "© 2025 E-BIKE. Todos os direitos reservados."
   },
   "bikes": [
     {
@@ -120,7 +120,7 @@
     },
     {
       "name": "Leticia Souza Baesse",
-      "text": "Comprei minha bike modelo V8 Pro há cerca de 1 ano. Na época o Lucas estava começando no ramo, nos atendeu super bem e até hoje continuam nos atendendo, seja com dúvidas ou para fazer a revisão. Atendimento de primeira. Recomendo.",
+      "text": "Comprei minha bike modelo V8 Pro há cerca de 1 ano. O atendimento foi excelente desde o início e até hoje continuam nos atendendo, seja com dúvidas ou para fazer a revisão. Atendimento de primeira. Recomendo.",
       "image": "https://ui-avatars.com/api/?name=Leticia+Souza&background=e0e0e0&color=555&size=200",
       "date": "1 mês atrás"
     },
@@ -150,7 +150,7 @@
     },
     {
       "name": "Leandro Olímpio",
-      "text": "Estou feliz com minha nova aquisição. Melhor preço que encontrei e facilidade no pagamento. Parabéns ao Lucas pelo atendimento nota 10. Quem estiver em busca de bike elétrica esse é o melhor lugar.",
+      "text": "Estou feliz com minha nova aquisição. Melhor preço que encontrei e facilidade no pagamento. Atendimento nota 10. Quem estiver em busca de bike elétrica esse é o melhor lugar.",
       "image": "https://ui-avatars.com/api/?name=Leandro+Olimpio&background=e0e0e0&color=555&size=200",
       "date": "1 ano atrás"
     },
@@ -186,18 +186,10 @@
     }
   ],
   "howItWorks": [
-    {
-      "title": "Marcas líderes de mercado",
-      "desc": "Acesso às marcas mais potentes e tecnológicas do segmento, como as bicicletas elétricas OUXI."
-    },
-    {
-      "title": "Loja física em Vitória",
-      "desc": "Um ano de garantia de fábrica e a segurança de testar o modelo ideal antes de comprar."
-    },
-    {
-      "title": "Oficina própria especializada",
-      "desc": "Mecânicos capacitados para qualquer suporte ou manutenção da sua bike elétrica."
-    },
+    { "title": "Escolha seu modelo", "desc": "Navegue pelo catálogo e encontre a e-bike ideal para o seu estilo de vida — urbana, off-road ou lazer." },
+    { "title": "Visite nossa loja na Praia do Canto", "desc": "Venha testar pessoalmente na nossa loja em Vitória-ES. Nossa equipe te guia na melhor escolha." },
+    { "title": "Compra simples e segura", "desc": "Pagamento facilitado, parcelamento sem juros e entrega direto na sua porta em todo o ES." },
+    { "title": "Suporte completo pós-venda", "desc": "Oficina própria, estoque de peças e assistência técnica garantida para você pedalar sempre." }
     {
       "title": "Pós-venda completo",
       "desc": "Amplo estoque de peças de reposição e assistência técnica garantida sempre que precisar."

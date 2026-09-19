@@ -101,8 +101,8 @@
 
 .node:hover {
   transform: scale(1.3);
-  border-color: rgba(0, 86, 255, 0.8);
-  background: #0056FF;
+  border-color: rgba(0, 168, 107, 0.8);
+  background: #00A86B;
 }
 
 /* ── Content ── */

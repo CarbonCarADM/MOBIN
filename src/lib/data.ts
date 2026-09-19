@@ -74,7 +74,7 @@ export interface SiteData {
 // ─── Dados padrão ────────────────────────────
 export const defaultData: SiteData = {
   settings: {
-    siteName: 'Mobin',
+    siteName: 'E-BIKE',
     siteDescription: 'E-bikes premium, curadoria especializada e suporte completo para cada pedal.',
     whatsapp: '5527999999999',
     instagram: '#instagram',
@@ -86,8 +86,8 @@ export const defaultData: SiteData = {
     heroStatLabel: 'Bikes Vendidas',
     footerTitle: 'Conforto e performance te esperam',
     footerSubtitle: 'Visite nossa loja e teste uma e-bike de luxo instantaneamente',
-    mapsEmbed: 'https://maps.google.com/maps?q=Avenida%20Augusto%20Emilio%20Estellita%20Lins%2C%2070%2C%20Jardim%20Camburi%2C%20Vit%C3%B3ria%20-%20ES%2C%2029090-590&t=&z=16&ie=UTF8&iwloc=&output=embed',
-    copyright: '© 2025 Mobin. Todos os direitos reservados.',
+    mapsEmbed: 'https://maps.google.com/maps?q=Praia+do+Canto,+Vit%C3%B3ria,+ES&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    copyright: '© 2025 E-BIKE. Todos os direitos reservados.',
   },
   bikes: [
     {

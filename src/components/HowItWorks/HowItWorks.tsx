@@ -5,20 +5,20 @@ import styles from './HowItWorks.module.css';
 
 const steps = [
   {
-    title: 'Marcas líderes de mercado',
-    desc: 'Acesso às marcas mais potentes e tecnológicas do segmento, como as bicicletas elétricas OUXI.',
+    title: 'Escolha seu modelo',
+    desc: 'Navegue pelo catálogo e encontre a e-bike ideal para o seu estilo de vida — urbana, off-road ou lazer.',
   },
   {
-    title: 'Loja física em Vitória',
-    desc: 'Um ano de garantia de fábrica e a segurança de testar o modelo ideal antes de comprar.',
+    title: 'Visite nossa loja na Praia do Canto',
+    desc: 'Venha testar pessoalmente na nossa loja em Vitória-ES. Nossa equipe te guia na melhor escolha.',
   },
   {
-    title: 'Oficina própria especializada',
-    desc: 'Mecânicos capacitados para qualquer suporte ou manutenção da sua bike elétrica.',
+    title: 'Compra simples e segura',
+    desc: 'Pagamento facilitado, parcelamento sem juros e entrega direto na sua porta em todo o ES.',
   },
   {
-    title: 'Pós-venda completo',
-    desc: 'Amplo estoque de peças de reposição e assistência técnica garantida sempre que precisar.',
+    title: 'Suporte completo pós-venda',
+    desc: 'Oficina própria, estoque de peças e assistência técnica garantida para você pedalar sempre.',
   },
 ];
 
@@ -32,8 +32,8 @@ export default function HowItWorks() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <span className={styles.label}>Por que a Mobin</span>
-        <h2 className={styles.title}>Por que escolher a Mobin</h2>
+        <span className={styles.label}>Como funciona</span>
+        <h2 className={styles.title}>Do catálogo à sua porta</h2>
       </motion.div>
 
       <div className={styles.timeline}>

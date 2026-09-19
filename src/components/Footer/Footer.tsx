@@ -11,7 +11,7 @@ export default function Footer() {
 
         <div className={styles.mapSection}>
           <iframe
-            src="https://maps.google.com/maps?q=Avenida%20Augusto%20Emilio%20Estellita%20Lins%2C%2070%2C%20Jardim%20Camburi%2C%20Vit%C3%B3ria%20-%20ES%2C%2029090-590&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Praia+do+Canto,+Vit%C3%B3ria,+ES&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p className={styles.copyright}>© 2025 Mobin. Todos os direitos reservados.</p>
+          <p className={styles.copyright}>© 2025 E-BIKE. Todos os direitos reservados.</p>
           <div className={styles.social}>
             <a href="#instagram" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

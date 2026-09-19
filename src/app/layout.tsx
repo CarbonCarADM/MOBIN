@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Mobin - E-Bikes',
+  title: 'E-BIKE - Bikes Elétricas Premium',
   description: 'E-bikes premium, curadoria especializada e suporte completo para cada pedal.',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'Viva E-Bike',
+    title: 'E-BIKE',
   },
 };
 

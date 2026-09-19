@@ -198,7 +198,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #0056FF;
+  background-color: #00A86B;
   color: #fff;
   font-family: 'Inter', sans-serif;
   font-size: 13px;
@@ -212,9 +212,9 @@
 }
 
 .btn:hover { 
-  background-color: #0047CC;
+  background-color: #008A58;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 86, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 168, 107, 0.3);
 }
 
 .btn:active {

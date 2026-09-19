@@ -47,7 +47,7 @@
   font-weight: 700;
   font-size: 16px;
   letter-spacing: -0.3px;
-  color: #0056FF;
+  color: #00A86B;
   white-space: nowrap;
   transition: opacity 0.2s ease;
   padding-right: 8px;
@@ -100,7 +100,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #0056FF;
+  background: #00A86B;
   color: #fff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 13px;
@@ -109,15 +109,15 @@
   height: 40px;
   border-radius: 100px;
   letter-spacing: -0.1px;
-  box-shadow: 0 2px 12px rgba(0, 86, 255, 0.3);
+  box-shadow: 0 2px 12px rgba(0, 168, 107, 0.3);
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .cta:hover {
-  background: #0047CC;
-  box-shadow: 0 4px 20px rgba(0, 86, 255, 0.4);
+  background: #008A58;
+  box-shadow: 0 4px 20px rgba(0, 168, 107, 0.4);
   transform: translateY(-1px);
 }
 
@@ -153,7 +153,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: #0056FF;
+  background: #00A86B;
   color: #fff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 14px;
@@ -163,12 +163,12 @@
   text-decoration: none;
   letter-spacing: -0.1px;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(0, 86, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 168, 107, 0.35);
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .ctaMobile a:active {
-  background: #0047CC;
+  background: #008A58;
   transform: scale(0.97);
 }
 

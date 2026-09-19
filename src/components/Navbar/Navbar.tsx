@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <div className={styles.wrapper}>
       <nav className={styles.navbar}>
-        <Link href="/" className={styles.logo} onClick={closeMenu}>MOBIN</Link>
+        <Link href="/" className={styles.logo} onClick={closeMenu}>E-BIKE</Link>
 
         <span className={styles.divider} />
 

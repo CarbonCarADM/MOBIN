@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     date: "3 semanas atrás",
   },
   {
-    text: "Comprei minha bike modelo V8 Pro há cerca de 1 ano. Na época o Lucas estava começando no ramo, nos atendeu super bem e até hoje continuam nos atendendo, seja com dúvidas ou para fazer a revisão. Atendimento de primeira. Recomendo.",
+    text: "Comprei minha bike modelo V8 Pro há cerca de 1 ano. O atendimento foi excelente desde o início e até hoje continuam nos atendendo, seja com dúvidas ou para fazer a revisão. Atendimento de primeira. Recomendo.",
     image: "https://ui-avatars.com/api/?name=Leticia+Souza&background=e0e0e0&color=555&size=200",
     name: "Leticia Souza Baesse",
     date: "1 mês atrás",
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
     date: "3 meses atrás",
   },
   {
-    text: "Estou feliz com minha nova aquisição. Melhor preço que encontrei e facilidade no pagamento. Parabéns ao Lucas pelo atendimento nota 10. Quem estiver em busca de bike elétrica esse é o melhor lugar.",
+    text: "Estou feliz com minha nova aquisição. Melhor preço que encontrei e facilidade no pagamento. Atendimento nota 10. Quem estiver em busca de bike elétrica esse é o melhor lugar.",
     image: "https://ui-avatars.com/api/?name=Leandro+Olimpio&background=e0e0e0&color=555&size=200",
     name: "Leandro Olímpio",
     date: "1 ano atrás",
