@@ -1,57 +1,25 @@
 import Link from 'next/link';
 import BikeCard from './BikeCard';
 import styles from './FeaturedSection.module.css';
+import { defaultData } from '@/lib/data';
+import { promises as fs } from 'fs';
+import path from 'path';
+import type { SiteData } from '@/lib/data';
 
-const bikes = [
-  {
-    id: 'himiway-cruiser',
-    name: 'Himiway Escape Pro',
-    year: '2024',
-    price: 'R$18.990',
-    image: '/hero-bike.jpg',
-  },
-  {
-    id: 'himiway-cruiser',
-    name: 'Himiway Cruiser',
-    year: '2023',
-    price: 'R$22.500',
-    tag: 'Performance',
-    image: '/hero-bike.jpg',
-  },
-  {
-    id: 'himiway-cruiser',
-    name: 'Himiway Zebra',
-    year: '2024',
-    price: 'R$26.900',
-    tag: 'Novo',
-    image: '/hero-bike.jpg',
-  },
-  {
-    id: 'ado-a20f',
-    name: 'Himiway Rambler',
-    year: '2024',
-    price: 'R$31.500',
-    tag: 'Premium',
-    image: '/hero-bike.jpg',
-  },
-  {
-    id: 'ado-a20f',
-    name: 'Himiway Cobra',
-    year: '2024',
-    price: 'R$34.900',
-    image: '/hero-bike.jpg',
-  },
-  {
-    id: 'ado-a20f',
-    name: 'Himiway Big Dog',
-    year: '2023',
-    price: 'R$28.700',
-    tag: 'Off-Road',
-    image: '/hero-bike.jpg',
-  },
-];
+async function getData(): Promise<SiteData> {
+  try {
+    const file = path.join(process.cwd(), 'src', 'lib', 'site-data.json');
+    const raw = await fs.readFile(file, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return defaultData;
+  }
+}
 
-export default function FeaturedSection() {
+export default async function FeaturedSection() {
+  const data = await getData();
+  const bikes = data.bikes;
+
   return (
     <section className={styles.section} id="catalogo">
       <div className={styles.header}>
@@ -74,7 +42,15 @@ export default function FeaturedSection() {
 
       <div className={styles.grid}>
         {bikes.map((bike) => (
-          <BikeCard key={bike.name} {...bike} />
+          <BikeCard
+            key={bike.id + bike.name}
+            id={bike.id}
+            name={bike.name}
+            year={bike.year}
+            price={`R$${bike.price}`}
+            tag={bike.tag}
+            image={bike.images?.[0] ?? '/hero-bike.webp'}
+          />
         ))}
       </div>
     </section>

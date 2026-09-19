@@ -96,10 +96,10 @@ const TestimonialsColumn = ({ testimonials, direction }: { testimonials: Testimo
       <motion.div
         className={styles.track}
         animate={{
-          y: direction === 'up' ? [0, -1000] : [-1000, 0],
+          y: direction === 'up' ? [0, -760] : [-760, 0],
         }}
         transition={{
-          duration: 30,
+          duration: 35,
           repeat: Infinity,
           ease: "linear",
         }}

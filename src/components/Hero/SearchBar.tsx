@@ -1,32 +1,33 @@
-"use client";
+'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Hero.module.css';
-
-const bikes = [
-  { id: 'himiway-cruiser', name: 'Himiway Escape Pro', year: '2024', price: 'R$18.990' },
-  { id: 'himiway-cruiser', name: 'Himiway Cruiser', year: '2023', price: 'R$22.500' },
-  { id: 'himiway-cruiser', name: 'Himiway Zebra', year: '2024', price: 'R$26.900' },
-  { id: 'ado-a20f', name: 'Himiway Rambler', year: '2024', price: 'R$31.500' },
-  { id: 'ado-a20f', name: 'Himiway Cobra', year: '2024', price: 'R$34.900' },
-  { id: 'ado-a20f', name: 'Himiway Big Dog', year: '2023', price: 'R$28.700' },
-];
+import { defaultData } from '@/lib/data';
+import type { Bike } from '@/lib/data';
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [bikes, setBikes] = useState<Bike[]>(defaultData.bikes);
+
+  useEffect(() => {
+    fetch('/api/admin/data')
+      .then(r => r.json())
+      .then(d => { if (d?.bikes) setBikes(d.bikes); })
+      .catch(() => {});
+  }, []);
 
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.toLowerCase();
     return bikes.filter(
-      (bike) =>
-        bike.name.toLowerCase().includes(q) ||
-        bike.year.includes(q) ||
-        bike.price.toLowerCase().includes(q)
+      b =>
+        b.name.toLowerCase().includes(q) ||
+        b.year.includes(q) ||
+        b.price.toLowerCase().includes(q)
     );
-  }, [query]);
+  }, [query, bikes]);
 
   function handleSelect() {
     setQuery('');
@@ -35,7 +36,7 @@ export default function SearchBar() {
 
   return (
     <div className={styles.searchContainer}>
-      <form className={styles.search} onSubmit={(e) => e.preventDefault()}>
+      <form className={styles.search} onSubmit={e => e.preventDefault()}>
         <svg
           className={styles.searchIcon}
           viewBox="0 0 24 24"
@@ -52,10 +53,7 @@ export default function SearchBar() {
           type="text"
           placeholder="Buscar bikes..."
           value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setIsOpen(true);
-          }}
+          onChange={e => { setQuery(e.target.value); setIsOpen(true); }}
           onFocus={() => setIsOpen(true)}
         />
       </form>
@@ -64,7 +62,7 @@ export default function SearchBar() {
         <div className={styles.searchDropdown}>
           {results.length > 0 ? (
             <ul className={styles.searchResults}>
-              {results.map((bike) => (
+              {results.map(bike => (
                 <li key={bike.id + bike.name}>
                   <Link
                     href={`/bike/${bike.id}`}
@@ -72,9 +70,7 @@ export default function SearchBar() {
                     onClick={handleSelect}
                   >
                     <div className={styles.resultName}>{bike.name}</div>
-                    <div className={styles.resultMeta}>
-                      {bike.year} • {bike.price}
-                    </div>
+                    <div className={styles.resultMeta}>{bike.year} • R${bike.price}</div>
                   </Link>
                 </li>
               ))}
@@ -86,10 +82,7 @@ export default function SearchBar() {
       )}
 
       {isOpen && (
-        <div
-          className={styles.searchBackdrop}
-          onClick={() => setIsOpen(false)}
-        />
+        <div className={styles.searchBackdrop} onClick={() => setIsOpen(false)} />
       )}
     </div>
   );

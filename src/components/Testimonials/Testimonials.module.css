@@ -1,3 +1,7 @@
+/* ──────────────────────────────────────────────────── */
+/* CORE STYLING */
+/* ──────────────────────────────────────────────────── */
+
 .section {
   padding: 96px 72px 112px 72px;
   background-color: #f5f5f5;
@@ -55,9 +59,13 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 100px;
   padding: 10px 20px 10px 16px;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.06),
-    0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.googleBadge:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .googleLogo {
@@ -112,25 +120,13 @@
 /* ── Container ── */
 .container {
   display: flex;
-  gap: 24px;
+  gap: 12px;
   justify-content: center;
   position: relative;
   max-height: 700px;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 /* ── Column ── */
@@ -147,77 +143,354 @@
   height: fit-content;
 }
 
-/* ── Card ── */
+/* ── Card (Otimizado - Menor) ── */
 .card {
-  width: 380px;
+  width: 300px;
   flex-shrink: 0;
   background-color: #ffffff;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.06),
-    0 1px 2px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.22, 0.68, 0, 1.15);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 
-    0 10px 25px rgba(0, 0, 0, 0.08),
-    0 4px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.text {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.56);
-  line-height: 1.7;
-  margin: 0 0 24px 0;
-}
-
-/* ── Footer ── */
+/* ── Footer (Compacto) ── */
 .footer {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .avatar {
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0px;
+  min-width: 0;
+  flex: 1;
 }
 
 .name {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   color: #0d0d0d;
   letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .stars {
-  font-size: 11px;
+  font-size: 9px;
   color: #f5a623;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1;
-  margin-top: 2px;
 }
 
 .date {
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.32);
-  margin-top: 1px;
+  margin-top: 0;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* DESKTOP - Cards Maiores (>1024px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (min-width: 1025px) {
+  .container {
+    gap: 8px;
+  }
+
+  .column {
+    width: 340px;
+  }
+
+  .card {
+    width: 340px;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .text {
+    font-size: 13px;
+    line-height: 1.6;
+    -webkit-line-clamp: 5;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+
+  .stars {
+    font-size: 10px;
+  }
+
+  .date {
+    font-size: 10px;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* RESPONSIVE - Tablet (768px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 32px 80px 32px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+    gap: 10px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .googleBadge {
+    font-size: 12px;
+    padding: 9px 16px 9px 12px;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .googleLogo {
+    width: 18px;
+    height: 18px;
+  }
+
+  .googleRating {
+    font-size: 12px;
+  }
+
+  .googleStarIcons {
+    font-size: 10px;
+  }
+
+  .googleCount {
+    font-size: 10px;
+  }
+
+  .container {
+    gap: 10px;
+    max-height: 500px;
+  }
+
+  .column {
+    width: 240px;
+  }
+
+  .track {
+    gap: 12px;
+  }
+
+  .card {
+    width: 240px;
+    padding: 14px;
+  }
+
+  .text {
+    font-size: 11px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+    -webkit-line-clamp: 3;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .name {
+    font-size: 11px;
+  }
+
+  .stars {
+    font-size: 9px;
+  }
+
+  .date {
+    font-size: 9px;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* RESPONSIVE - Mobile (480px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 16px 56px 16px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .label {
+    font-size: 9px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .googleBadge {
+    font-size: 11px;
+    padding: 8px 14px 8px 10px;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .googleLogo {
+    width: 16px;
+    height: 16px;
+  }
+
+  .googleInfo {
+    gap: 0;
+  }
+
+  .googleRating {
+    font-size: 11px;
+  }
+
+  .googleStarIcons {
+    font-size: 9px;
+  }
+
+  .googleCount {
+    font-size: 9px;
+  }
+
+  .container {
+    gap: 10px;
+    max-height: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .column {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .track {
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .text {
+    font-size: 11px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .name {
+    font-size: 11px;
+  }
+
+  .stars {
+    font-size: 8px;
+  }
+
+  .date {
+    font-size: 8px;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* MOBILE LAYOUT - 1 Coluna (480px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 480px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .column:nth-child(2),
+  .column:nth-child(3) {
+    display: none;
+  }
+
+  .column {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 320px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TABLET LAYOUT - 2 Colunas (768px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 768px) {
+  .column:nth-child(3) {
+    display: none;
+  }
 }

@@ -24,7 +24,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   filter: brightness(0.85);
 }
@@ -32,7 +32,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
   background: 
     linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 5%, transparent 30%),
@@ -148,13 +148,13 @@
 .searchBackdrop {
   position: fixed;
   inset: 0;
-  z-index: 5;
+  z-index: 1;
 }
 
 /* Content fills full height, pushes bottom to end */
 .content {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -190,7 +190,7 @@
   font-size: 12.5px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.78);
-  line-height: 1.55;
+  line-height: 1.6;
   max-width: 270px;
 }
 
@@ -206,10 +206,20 @@
   padding: 9px 16px;
   border-radius: 10px;
   width: fit-content;
-  transition: background 0.2s;
+  transition: all 0.3s cubic-bezier(0.22, 0.68, 0, 1.15);
+  cursor: pointer;
+  border: none;
 }
 
-.btn:hover { background-color: #0047CC; }
+.btn:hover { 
+  background-color: #0047CC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 86, 255, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
 
 .btnArrow {
   display: flex;
@@ -296,4 +306,186 @@
   font-size: 10.5px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.50);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* RESPONSIVE - Tablet (768px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 8px 8px 8px;
+  }
+
+  .hero {
+    border-radius: 20px;
+    aspect-ratio: unset;
+    height: 73vh;
+    max-height: 600px;
+  }
+
+  .bgImg {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.92) 100%);
+  }
+
+  .searchContainer {
+    display: none;
+  }
+
+  .content {
+    padding: 28px 22px 26px 22px;
+    justify-content: space-between;
+  }
+
+  .bottom {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 12px;
+    height: 100%;
+  }
+
+  .left {
+    max-width: 100%;
+    gap: 12px;
+    flex: 0;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    font-size: 12.5px;
+    max-width: 100%;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .btn {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #fff;
+    gap: 10px;
+  }
+
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btnArrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    font-size: 13px;
+  }
+
+  .stats {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 0;
+    flex: 0;
+  }
+
+  .statCard {
+    width: 100%;
+    min-width: unset;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .statIcon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .statIcon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .statValue {
+    font-size: 15px;
+  }
+
+  .statLabel {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* RESPONSIVE - Mobile (480px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0 6px 6px 6px;
+  }
+
+  .hero {
+    border-radius: 20px;
+    height: 70vh;
+    max-height: 580px;
+  }
+
+  .content {
+    padding: 22px 18px 22px 18px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 12.5px;
+    padding: 9px 14px;
+  }
+
+  .stats {
+    gap: 6px;
+    padding-top: 14px;
+  }
+
+  .statCard {
+    padding: 10px 13px;
+    border-radius: 12px;
+  }
+
+  .statValue {
+    font-size: 14px;
+  }
+
+  .statLabel {
+    font-size: 9.5px;
+  }
 }

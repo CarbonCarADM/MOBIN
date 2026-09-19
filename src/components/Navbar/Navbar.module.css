@@ -4,10 +4,11 @@
   top: 20px;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 9999;
   display: flex;
   justify-content: center;
-  pointer-events: none; /* cliques passam pelo wrapper transparente */
+  pointer-events: none;
+  padding: 0;
 }
 
 /* ── Pill flutuante ── */
@@ -15,10 +16,10 @@
   pointer-events: all;
   display: flex;
   align-items: center;
-  gap: 0;
-  padding: 6px 6px 6px 24px;
+  gap: 12px;
+  padding: 8px 16px;
   height: 56px;
-  border-radius: 100px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
@@ -28,6 +29,8 @@
     0 2px 8px rgba(0, 0, 0, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transition: box-shadow 0.3s ease, background 0.3s ease;
+  width: 100%;
+  margin: 0 16px;
 }
 
 .navbar:hover {
@@ -61,6 +64,7 @@
   background: rgba(0, 0, 0, 0.1);
   margin: 0 4px;
   flex-shrink: 0;
+  display: none;
 }
 
 /* ── Links ── */
@@ -68,11 +72,12 @@
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 2px;
-  padding: 0 4px;
+  gap: 4px;
+  padding: 0;
+  flex: 1;
 }
 
-.links li a {
+.links li:not(.ctaMobile) a {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -85,12 +90,12 @@
   display: block;
 }
 
-.links li a:hover {
+.links li:not(.ctaMobile) a:hover {
   color: #0d0d0d;
   background: rgba(0, 0, 0, 0.06);
 }
 
-/* ── CTA ── */
+/* ── CTA Desktop ── */
 .cta {
   display: flex;
   align-items: center;
@@ -100,8 +105,8 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  padding: 0 18px 0 20px;
-  height: 44px;
+  padding: 0 16px 0 18px;
+  height: 40px;
   border-radius: 100px;
   letter-spacing: -0.1px;
   box-shadow: 0 2px 12px rgba(0, 86, 255, 0.3);
@@ -133,4 +138,206 @@
 .cta:hover .ctaArrow {
   background: rgba(255, 255, 255, 0.35);
   transform: translateX(2px);
+}
+
+/* ── CTA Mobile (dentro do menu) ── */
+.ctaMobile {
+  display: none;
+  padding-top: 12px;
+  margin-top: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ctaMobile a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #0056FF;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 12px 12px 20px;
+  border-radius: 100px;
+  text-decoration: none;
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 86, 255, 0.35);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.ctaMobile a:active {
+  background: #0047CC;
+  transform: scale(0.97);
+}
+
+.ctaMobileArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Hamburger Menu ── */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.menuButton span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menuButton span::before,
+.menuButton span::after,
+.menuButton span {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: #0d0d0d;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ── Tablet Responsividade (768px) ── */
+@media (max-width: 768px) {
+  .wrapper {
+    top: 12px;
+    padding: 0 12px;
+  }
+
+  .navbar {
+    padding: 8px 12px;
+    height: 48px;
+    border-radius: 12px;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 14px;
+    padding-right: 0;
+    flex-shrink: 0;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(24px);
+    border-radius: 16px;
+    padding: 12px;
+    gap: 4px;
+    margin-top: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  .links.active {
+    display: flex;
+  }
+
+  .links li:not(.ctaMobile) a {
+    font-size: 12px;
+    padding: 10px 12px;
+    width: 100%;
+  }
+
+  .ctaMobile a {
+    font-size: 14px;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .ctaMobile {
+    display: none !important;
+  }
+
+  .links.active .ctaMobile {
+    display: block !important;
+  }
+
+  .menuButton {
+    display: flex;
+    margin-left: 8px;
+  }
+
+  .menuButton.active span {
+    background: transparent;
+  }
+
+  .menuButton.active span::before {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .menuButton.active span::after {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+/* ── Mobile Responsividade (480px) ── */
+@media (max-width: 480px) {
+  .wrapper {
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  .navbar {
+    padding: 6px 6px 6px 14px;
+    height: 44px;
+    border-radius: 20px;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 13px;
+    padding-right: 0;
+    flex: 1;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .links {
+    padding: 10px;
+    gap: 2px;
+  }
+
+  .links li:not(.ctaMobile) a {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .menuButton {
+    display: flex;
+    margin-left: 0;
+    flex-shrink: 0;
+  }
 }

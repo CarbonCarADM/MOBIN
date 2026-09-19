@@ -21,9 +21,8 @@ export default function Hero() {
         <SearchBar />
 
         <div className={styles.content}>
-          {/* Bottom row */}
           <div className={styles.bottom}>
-            {/* Left */}
+            {/* Left — título, subtítulo, botão */}
             <div className={styles.left}>
               <h1 className={styles.title}>
                 Bikes elétricas premium para cada jornada
@@ -37,7 +36,7 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Right — stat cards */}
+            {/* Stats cards */}
             <div className={styles.stats}>
               <div className={styles.statCard}>
                 <div className={styles.statIcon}>

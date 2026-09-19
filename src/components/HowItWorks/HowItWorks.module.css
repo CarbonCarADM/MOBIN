@@ -96,6 +96,13 @@
   position: relative;
   z-index: 2;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.node:hover {
+  transform: scale(1.3);
+  border-color: rgba(0, 86, 255, 0.8);
+  background: #0056FF;
 }
 
 /* ── Content ── */
@@ -135,3 +142,124 @@
 
 .stepLeft .stepDesc  { margin-left: auto; }
 .stepRight .stepDesc { margin-right: auto; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* RESPONSIVE - Tablet (768px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 32px 80px 32px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+    gap: 10px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .timeline {
+    max-width: 100%;
+  }
+
+  /* Muda para layout single-column em mobile */
+  .line {
+    left: 24px;
+  }
+
+  .step {
+    grid-template-columns: 48px 1fr;
+    min-height: 120px;
+    gap: 20px;
+  }
+
+  /* Todos os passos vão para a direita */
+  .stepLeft .content,
+  .stepRight .content {
+    grid-column: 2;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  .stepLeft .nodeWrap,
+  .stepRight .nodeWrap {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .stepLeft .spacer,
+  .stepRight .spacer {
+    display: none;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+  }
+
+  .stepDesc {
+    font-size: 12px;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* RESPONSIVE - Mobile (480px) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 16px 56px 16px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .label {
+    font-size: 9px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .timeline {
+    max-width: 100%;
+  }
+
+  .line {
+    left: 20px;
+  }
+
+  .step {
+    grid-template-columns: 40px 1fr;
+    min-height: 100px;
+    gap: 16px;
+  }
+
+  .node {
+    width: 12px;
+    height: 12px;
+  }
+
+  .stepNumber {
+    font-size: 9px;
+  }
+
+  .stepTitle {
+    font-size: 13px;
+  }
+
+  .stepDesc {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
